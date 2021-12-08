@@ -1,10 +1,12 @@
 class Wrapper:
 
-    def __init__(self, day: str):
+    def __init__(self, day: str, example: bool = False):
         self.day = day
+        self.use_example = example
 
     def load_input(self):
-        path = f'./inputs/input{self.day}.txt'
+        path = (f'./inputs/input{self.day}.txt' if not self.use_example
+                else f'./inputs/input{self.day}_example.txt')
         with open(path) as fp:
             return fp.read().splitlines()
 
