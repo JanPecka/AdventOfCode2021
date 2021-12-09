@@ -16,5 +16,9 @@ class Wrapper:
     def load_input_row_as_int(self):
         return [int(i) for i in self.load_input()[0].split(',')]
 
+    def load_input_as_array(self):
+        rows = self.load_input()
+        return [[int(i) for i in list(r)] for r in rows]
+
     def print_input(self):
         print(self.load_input())
